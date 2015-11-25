@@ -125,7 +125,8 @@ WildEmitter.mixin = function (constructor) {
                 if (!listeners[i]) {
                     break;
                 }
-                listeners[i].apply(this, [event].concat(args));
+                listeners[i].event = event
+                listeners[i].apply(this, args);
             }
         }
 
